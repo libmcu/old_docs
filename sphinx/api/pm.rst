@@ -1,6 +1,38 @@
-===
-PMU
-===
+================
+Power Management
+================
+.. uml::
+    :caption: A Class Diagram
+
+    enum sleep_mode {
+        PM_SLEEP,
+        PM_SLEEP_DEEP,
+        PM_SLEEP_BLACKOUT,
+        PM_SLEEP_SHIP,
+    }
+    interface ADC {
+    }
+    interface I2C {
+    }
+    class PM {
+        reboot()
+        sleep(sleep_mode)
+        register_sleep_ctor(func, sleep_mode)
+        register_sleep_dtor(func, sleep_mode)
+        register_sleep_notifier()
+    }
+    class Battery {
+        enable_monitor()
+        level_raw()
+        raw_to_millivolts()
+    }
+
+    PM --> Battery
+    Battery --> BQ25180
+    Battery --> ADC
+    BQ25180 --> I2C
+    ADC_impl ..|> ADC
+    I2C_impl ..|> I2C
 
 BQ25180
 =======
@@ -44,9 +76,7 @@ BQ25180
         shipmode()
         shutdown_mode()
     }
-    Controller --> BQ25180
-    Controller --> i2c_interface
-    Controller ..|> BQ25180_io
+    BQ25180_io ..> i2c_interface
     i2c_impl ..|> i2c_interface
     BQ25180 --> BQ25180_io
 
@@ -92,6 +122,18 @@ $V_{BATSC} < V_{BAT} < V_{LOWV}$ 의 경우, $I_{PRECHG}$ [#f5]_ 전류로 충�
 .. [#f4] $I_{BATSC} = 8mA$
 .. [#f5] $I_{PRECHG}$ = `CHARGECTRL0.IPRECHG` 설정에 따라 I_{TERM} 의 2배이거나 1배
 .. [#f6] $VBATREG$ = 배터리 regulation 전압. 최대 4.65V 로 `VBAT_CTRL.VBATREG` 에서 설정
+
+운영모드
+-------
+
+4 가지 운영모드를 제공합니다:
+
+- Charger/Adapter Mode
+- Battery Mode
+- Ship Mode
+- Shutdown Mode
+
+리셋시 Charger/Adapter Mode 가 기본으로 동작합니다.
 
 기능
 ----

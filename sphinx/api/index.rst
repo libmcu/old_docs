@@ -8,7 +8,7 @@ API Reference
    cbor
    libmcu
    mqtt
-   pmu
+   pm
    transport
    watchdog
    wifi
