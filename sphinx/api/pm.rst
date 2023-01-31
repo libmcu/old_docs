@@ -4,45 +4,32 @@ Power Management
 .. uml::
     :caption: A Class Diagram
 
+    enum shutdown_mode {
+        SHUTDOWN,
+        SHUTDOWN_SOFT_RESET,
+        SHUTDOWN_HARD_RESET,
+    }
     enum sleep_mode {
         PM_SLEEP,
         PM_SLEEP_DEEP,
         PM_SLEEP_BLACKOUT,
         PM_SLEEP_SHIP,
     }
-    interface ADC {
-    }
-    interface I2C {
-    }
+    interface ADC { }
+    interface I2C { }
+    interface INTCallback { }
     class PM {
-        reboot()
+        shutdown(shutdown_mode)
+        register_shutdown_handler(func, priority)
         sleep(sleep_mode)
-        register_sleep_ctor(func, sleep_mode)
-        register_sleep_dtor(func, sleep_mode)
-        register_sleep_notifier()
+        register_sleep_handler(func, sleep_mode, priority)
     }
     class Battery {
+        init()
         enable_monitor()
         level_raw()
+        level_pct()
         raw_to_millivolts()
-    }
-
-    PM --> Battery
-    Battery --> BQ25180
-    Battery --> ADC
-    BQ25180 --> I2C
-    ADC_impl ..|> ADC
-    I2C_impl ..|> I2C
-
-BQ25180
-=======
-.. uml::
-    :caption: A Class Diagram
-
-    interface i2c_interface {}
-    interface BQ25180_io {
-        read()
-        write()
     }
     class BQ25180 {
         reset(soft or hard)
@@ -76,13 +63,18 @@ BQ25180
         shipmode()
         shutdown_mode()
     }
-    BQ25180_io ..> i2c_interface
-    i2c_impl ..|> i2c_interface
-    BQ25180 --> BQ25180_io
 
-`BQ25180 Datasheet`_
+    PM --> Battery
+    Battery ..> BQ25180
+    Battery --> ADC
+    BQ25180 --> I2C
+    ADC_impl ..|> ADC
+    I2C_impl ..|> I2C
+    GPIO_impl --> INTCallback
+    Battery ..|> INTCallback
 
-.. _BQ25180 Datasheet: https://www.ti.com/lit/ds/symlink/bq25180.pdf
+BQ25180
+=======
 
 충전 흐름
 ---------
@@ -124,7 +116,7 @@ $V_{BATSC} < V_{BAT} < V_{LOWV}$ 의 경우, $I_{PRECHG}$ [#f5]_ 전류로 충�
 .. [#f6] $VBATREG$ = 배터리 regulation 전압. 최대 4.65V 로 `VBAT_CTRL.VBATREG` 에서 설정
 
 운영모드
--------
+--------
 
 4 가지 운영모드를 제공합니다:
 
@@ -236,7 +228,7 @@ VDPM_INT_MASK       VINDPM 또는 DDPM 이 활성화된 경우
 TS_INT_MASK         TS 이벤트가 발생한 경우
 TREG_INT_MASK       TREG 가 전류를 감소할 때
 PG_INT_MASK         VIN 이 Power Good 상태일 때
-BAT_INT_MASK        BATOCP 또는 BUVLO 이베트가 발생한 경우
+BAT_INT_MASK        BATOCP 또는 BUVLO 이벤트가 발생한 경우
 CHG_STATUS_INT_MASK 충전 상태가 변경된 경우
 =================== ======================================
 

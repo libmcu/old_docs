@@ -2,9 +2,9 @@ libmcu Developer Documentation
 ==============================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-   readme
+   quickstart/index
    api/index
    boards/index
    changelog

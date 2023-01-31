@@ -32,6 +32,14 @@ or add it as a submodule to your project:
 $ git submodule add https://github.com/STMicroelectronics/STM32CubeF1.git external/STM32CubeF1
 ```
 
+## libmcu STM32G473CE
+
+https://www.st.com/en/microcontrollers-microprocessors/stm32g473ce.html
+
+```shell
+$ git clone https://github.com/STMicroelectronics/STM32CubeG4.git external/STM32CubeG4
+```
+
 ## STM32F103 BluePill
 ### Build
 

@@ -1,10 +1,27 @@
-# libmcu Development Board
+# ESP32
 
-## Core
+## ESP32_libmcu
+### Pinout
+![Pinout](../assets/esp32_libmcu.png)
 
-### ESP32
+#### USB Type-C Connector
 
-![Pinout](https://user-images.githubusercontent.com/20197999/198325717-b572a618-983e-4156-8259-81021f6312df.png)
+| Pin  | Func. |
+| ---- | ----- |
+| GND  |       |
+| TX1+ | TDO   |
+| TX1- | TCLK  |
+| VBUS |       |
+| CC1  |       |
+| D+   |       |
+| D-   |       |
+| SBU1 |       |
+| VBUS |       |
+| RX2- | TDI   |
+| RX2+ | TMS   |
+| GND  |       |
+
+### Specification
 
 | Name                  | Desc.                                               |
 | --------------------- | --------------------------------------------------- |
@@ -32,23 +49,6 @@
   - 순간(<20ms) 최대 허용 전류는 2.5A
 - SYS 최대 입력 전압은 1.8 ~ 5.5VDC
 
-#### USB Type-C Connector
-
-| Pin  | Func. |
-| ---- | ----- |
-| GND  |       |
-| TX1+ | TDO   |
-| TX1- | TCLK  |
-| VBUS |       |
-| CC1  |       |
-| D+   |       |
-| D-   |       |
-| SBU1 |       |
-| VBUS |       |
-| RX2- | TDI   |
-| RX2+ | TMS   |
-| GND  |       |
-
 #### LED
 
 - A user green LED
@@ -68,8 +68,4 @@
 | KUSBX-SMT-CS2-B30TR | -30  | 85   | &deg;C |
 | ESP32-WROOM-32E     | -40  | 85   | &deg;C |
 
-## Adapter
-
-## Sensor
-
-## Base
+## ESP32-DevKitC V2

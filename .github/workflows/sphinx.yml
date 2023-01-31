@@ -19,16 +19,7 @@ jobs:
       - name: Fix git safe.directory in container
         run: git config --global --add safe.directory /__w/${{ github.event.repository.name }}/${{ github.event.repository.name }}
       - name: Install dependencies
-        run: |
-          git clone https://github.com/libmcu/libmcu.git
-          git clone https://github.com/libmcu/cbor.git
-          git clone https://github.com/libmcu/firmware.git
-          git clone https://github.com/libmcu/pwifi.git
-          git clone https://github.com/libmcu/pble.git
-          git clone https://github.com/libmcu/pmqtt.git
-          git clone https://github.com/libmcu/pl4.git
-          git clone https://github.com/libmcu/bq25180.git
-          mkdir -p build/doxygen
+        run: mkdir -p build/doxygen
       - name: Build
         run: LD_LIBRARY_PATH=$(llvm-config --libdir) make html
       - name: Upload artifact
