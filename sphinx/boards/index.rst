@@ -62,6 +62,7 @@ Supported Boards
 .. toctree::
    :maxdepth: 2
 
+   libmcu
    esp32
    nrf52
    stm32

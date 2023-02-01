@@ -4,6 +4,7 @@ API Reference
 .. toctree::
    :maxdepth: 2
 
+   sdk
    ble
    cbor
    libmcu
