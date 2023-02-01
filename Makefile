@@ -12,7 +12,7 @@ BUILDDIR      = build
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile libmcu cbor firmware FDF pwifi pmqtt pl4 pble bq25180
+.PHONY: help Makefile libmcu cbor firmware MADI pwifi pmqtt pl4 pble bq25180
 
 libmcu:
 	@-git clone https://github.com/libmcu/libmcu.git
@@ -20,8 +20,8 @@ cbor:
 	@-git clone https://github.com/libmcu/cbor.git
 firmware:
 	@-git clone https://github.com/libmcu/firmware.git
-FDF:
-	@-git clone https://github.com/libmcu/FDF.git
+MADI:
+	@-git clone https://github.com/libmcu/MADI.git
 pwifi:
 	@-git clone https://github.com/libmcu/pwifi.git
 pmqtt:
@@ -35,5 +35,5 @@ bq25180:
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-%: Makefile | libmcu cbor firmware FDF pwifi pmqtt pl4 pble bq25180
+%: Makefile | libmcu cbor firmware MADI pwifi pmqtt pl4 pble bq25180
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)

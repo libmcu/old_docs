@@ -20,19 +20,31 @@ Supported Boards
      - WeAct BlackPill
      - Cortex-M4F
      - AT32F403A
-     - Artery
+     - WeAct
      -
    * - esp32
      - ESP32-DevKitC
-     - Xtensa LX6
+     - XTensa LX6
      - ESP32
      - Espressif
+     -
+   * - esp32_libmcu
+     - libmcu ESP32
+     - XTensa LX7
+     - ESP32-S3FN8
+     - libmcu
      -
    * - nrf52_blenano2
      - Redbear Nano v2
      - Cortex-M4F
      - nRF52
-     - Nordic
+     - RedBear
+     -
+   * - nrf52_libmcu
+     - libmcu nRF52
+     - Cortex-M4F
+     - nRF52840
+     - libmcu
      -
    * - rpi_pico
      - Raspberry Pi Pico
@@ -44,7 +56,13 @@ Supported Boards
      - STM32F103 BluePill
      - Cortex-M3
      - STM32F1
-     - ST
+     -
+     -
+   * - stm32_libmcu
+     - libmcu STM32
+     - Cortex-M4F
+     - STM32G473
+     - libmcu
      -
    * - stm32f429i_disc1
      - STM32F429I-DISC1
@@ -56,7 +74,7 @@ Supported Boards
      - myCortex-STM32F4
      - Cortex-M4F
      - STM32F4
-     - ST
+     - WithRobot
      - In progress
 
 .. toctree::
