@@ -28,10 +28,22 @@ Supported Boards
      - ESP32
      - Espressif
      -
-   * - esp32_libmcu
-     - libmcu ESP32
+   * - madi_esp32
+     - libmcu MADI ESP32
      - XTensa LX7
      - ESP32-S3FN8
+     - libmcu
+     -
+   * - madi_nrf52
+     - libmcu MADI nRF52
+     - Cortex-M4F
+     - nRF52840
+     - libmcu
+     -
+   * - madi_stm32
+     - libmcu MADI STM32
+     - Cortex-M4F
+     - STM32G473
      - libmcu
      -
    * - nrf52_blenano2
@@ -39,12 +51,6 @@ Supported Boards
      - Cortex-M4F
      - nRF52
      - RedBear
-     -
-   * - nrf52_libmcu
-     - libmcu nRF52
-     - Cortex-M4F
-     - nRF52840
-     - libmcu
      -
    * - rpi_pico
      - Raspberry Pi Pico
@@ -57,12 +63,6 @@ Supported Boards
      - Cortex-M3
      - STM32F1
      -
-     -
-   * - stm32_libmcu
-     - libmcu STM32
-     - Cortex-M4F
-     - STM32G473
-     - libmcu
      -
    * - stm32f429i_disc1
      - STM32F429I-DISC1
