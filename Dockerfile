@@ -26,5 +26,6 @@ RUN apk add \
 	breathe \
 	sphinxcontrib-plantuml \
 	sphinx-math-dollar \
+	sphinx-collapse \
 	&& \
 	wget https://github.com/plantuml/plantuml/releases/download/v1.2022.12/plantuml-1.2022.12.jar -O /usr/share/java/plantuml.jar

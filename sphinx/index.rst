@@ -7,4 +7,5 @@ libmcu Developer Documentation
    quickstart/index
    api/index
    boards/index
+   faq
    changelog

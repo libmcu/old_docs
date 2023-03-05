@@ -38,7 +38,8 @@ extensions = [
     'sphinx_math_dollar',
     'sphinx.ext.viewcode',
     'sphinx.ext.todo',
-    'sphinxcontrib.plantuml'
+    'sphinxcontrib.plantuml',
+    'sphinx_collapse',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
