@@ -1,6 +1,6 @@
 # ESP32
 
-In case of vscode, install [ESP-IDF extension](https://marketplace.visualstudio.com/items?itemName=espressif.esp-idf-extension).
+In case of vscode, install [ESP-IDF extension](https://marketplace.visualstudio.com/items?itemName=espressif.esp-idf-extension). Please refer to [Espressif's installation guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html#ide).
 
 or build with `idf.py` command line tool:
 

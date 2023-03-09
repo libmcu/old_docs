@@ -40,6 +40,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinxcontrib.plantuml',
     'sphinx_collapse',
+    'sphinx_tabs.tabs',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
