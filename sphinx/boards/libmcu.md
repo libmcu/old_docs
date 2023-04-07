@@ -47,7 +47,7 @@ Schematics for boards can be found
 | VBAT Voltage          | 3.5 ~ 4.6VDC @ 1.5A                                  |
 
 ### Pinout
-![Pinout](../assets/esp32_libmcu.png)
+![Pinout](../assets/esp32_libmcu.jpg)
 
 ### USB Type-C Connector
 
@@ -112,7 +112,7 @@ Schematics for boards can be found
 | VBAT Voltage          | 3.5 ~ 4.6VDC @ 1.5A                       |
 
 ### Pinout
-![Pinout](../assets/nrf52_libmcu.png)
+![Pinout](../assets/nrf52_libmcu.jpg)
 
 ### USB Type-C Connector
 
@@ -181,7 +181,7 @@ Schematics for boards can be found
 | VBAT Voltage          | 3.5 ~ 4.6VDC @ 1.5A                       |
 
 ### Pinout
-![Pinout](../assets/stm32_libmcu.png)
+![Pinout](../assets/stm32_libmcu.jpg)
 ### USB Type-C Connector
 
 | Pin  | GND | TX1+ | TX1- | VBUS | CC1 | D+ | D- | SBU1 | VBUS | RX2- | RX2+ | GND |
